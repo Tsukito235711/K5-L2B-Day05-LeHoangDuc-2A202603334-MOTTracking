@@ -6,13 +6,13 @@
 
 ## 0. Thông tin học viên
 
-- Họ tên:
-- MSSV:
-- Mã đề (A/B/C):
-- Email:
-- Link repository:
-- Giờ bắt đầu:
-- Giờ kết thúc:
+- Họ tên:Le Hoang Duc
+- MSSV:2A202603334
+- Mã đề (A/B/C):C
+- Email:26ai.duclh2@vinuni.eedu.vn
+- Link repository:https://github.com/Tsukito235711/K5--Day05-LeHoangDuc-2A202603334-MOTTracking
+- Giờ bắt đầu:14:30
+- Giờ kết thúc:18:00
 
 ## 1. Xem trước đoạn video (CP0)
 
@@ -20,11 +20,11 @@ Ghi **trước khi vẽ**, mỗi người một dòng.
 
 | Mã | Frame xuất hiện | Frame cuối thấy được | Rẽ / dừng / đổi tốc độ ở frame | Bị che ở frame | Ghi chú |
 |---|---|---|---|---|---|
-| P1 | | | | | |
-| P2 | | | | | |
-| P3 | | | | | |
-| P4 | | | | | |
-| P5 | | | | | |
+| P1 | 1 | 150| | | ok|
+| P2 |1 |137 | | 111-149 |ok |
+| P3 |1 | 150| 109 |27-55 |ok |
+| P4 |1 |106 | |91 | ok |
+| P5 |1 |149 | |106-139 | ok|
 
 ## 2. Keyframe và thời gian (CP1, CP4)
 
@@ -32,35 +32,41 @@ Số keyframe lấy từ kết quả `src/check_submission.py`.
 
 | Mã | Số keyframe | Keyframe ở frame | Số frame có mặt | Keyframe / 100 frame | Thời gian (phút) | Chỗ khó |
 |---|---|---|---|---|---|---|
-| P1 | | | | | | |
-| P2 | | | | | | |
-| P3 | | | | | | |
-| P4 | | | | | | |
-| P5 | | | | | | |
-| **Tổng** | | | | | | |
+| P1 |18 | | 150|12.0 |5 | |
+| P2 | 15| |135 |11.1 |10 | |
+| P3 | 17| |146 |11.6 |5 | |
+| P4 | 8| |106 | 7.5| 5| |
+| P5 | 14| |124 |11.3 |5 | |
+| P6 | 26| |150 |17.3 |10 | |
+| P7 | 8| |18 |44.4 |5 | |
+| P8 | 22| |91  |24.2 |5 | |
+| P9 | 4| |16 |25.0 |5 | |
+| P10 | 4| |7 |57.1 |5 | |
+| P11 | 9| |22 |40.9 |5 | |
+| P12 | 5| |6 |83.3 |5 | |
+| P13 | 8| |21 |38.1 |5 | |
+| **Tổng** | 158| |922 |15.9 |75 | |
 
-Keyframe / 100 frame của cả bài = tổng keyframe ÷ tổng số frame có mặt × 100 = ...
+Keyframe / 100 frame của cả bài = tổng keyframe ÷ tổng số frame có mặt × 100 = 15.9
 
 Bạn đặt keyframe nhiều nhất ở người nào? Vì sao (người đó rẽ, dừng, lại gần camera hay bị che)?
 
-...
+-> nguoi so 6, do da phai sua lai frame nhieu lan chu that ra chi can vai keyframe
 
 ## 3. Đoạn bị che (CP2)
 
-Người bị che: `P_`
+Người bị che: `P3`
 
 | Mốc | Frame |
 |---|---:|
-| Bắt đầu bị che một phần (bật `occluded`) | |
-| Mất hẳn (bật `outside`) | |
-| Hiện lại (tắt `outside`) | |
-| Thấy rõ trở lại (tắt `occluded`) | |
+| Bắt đầu bị che một phần (bật `occluded`) | 27|
+| Mất hẳn (bật `outside`) | 42|
+| Hiện lại (tắt `outside`) | 46|
+| Thấy rõ trở lại (tắt `occluded`) | 56|
 
-- Thời gian khuất hẳn: ___ frame = ___ giây.
-- Quyết định: giữ cùng ID / tạo track mới.
-- Lý do (trả lời 3 câu: khuất bao lâu so với 60 frame, ngoại hình có khớp, chỗ hiện lại có đúng hướng và tốc độ):
-
-...
+- Thời gian khuất hẳn: 4 frame =  giây.
+- Quyết định: giữ cùng ID 
+- Lý do (trả lời 3 câu: khuất bao lâu so với 60 frame, ngoại hình có khớp, chỗ hiện lại có đúng hướng và tốc độ): khuat chi 4 frame, ngoai hinh khop va cho hien lai nhu cu
 
 Ảnh chụp màn hình:
 
@@ -94,23 +100,23 @@ Lỗi nào chỉ lượt 2 (theo cảnh) mới thấy, lượt 1 (theo người)
 
 | Kiểm tra | Kết quả |
 |---|---|
-| Tên file MOT 1.1 | |
-| Tên file CVAT for video 1.1 | |
-| Số track ID khác nhau trong `gt/gt.txt` (phải là 5) | |
+| Tên file MOT 1.1 | ok|
+| Tên file CVAT for video 1.1 |ok |
+| Số track ID khác nhau trong `gt/gt.txt` (phải là 5) | 13|
 | Frame `outside` không có dòng trong `gt.txt` (đúng / sai) | |
-| Job đã completed trên CVAT máy cá nhân | |
+| Job đã completed trên CVAT máy cá nhân | ok|
 
 Dán phần tóm tắt in ra từ `src/check_submission.py`:
 
 ```text
-...
+Lỗi: 0   |   Cảnh báo: 2   
 ```
 
 ## 6. Ba câu kết
 
 1. Nếu được gán lại, bạn sẽ đặt keyframe khác ở đâu? Vì sao?
 
-   ...
+   o  nguoi minh da sua lai frame lam tang so keyframe
 
 2. Có chỗ nào bạn không chắc "cùng ID hay ID mới"? Bạn đã quyết định và ghi chú thế nào?
 
