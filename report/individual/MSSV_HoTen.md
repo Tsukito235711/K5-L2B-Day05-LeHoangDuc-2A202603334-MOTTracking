@@ -103,7 +103,66 @@ Lỗi nào chỉ lượt 2 (theo cảnh) mới thấy, lượt 1 (theo người)
 Dán phần tóm tắt in ra từ `src/check_submission.py`:
 
 ```text
-...
+Số frame in theo CVAT (bắt đầu từ 0). Trong gt.txt, frame_id = frame CVAT + 1.
+
+=== File MOT 1.1: LeHoangDuc_mot.zip ===
+  Số track ID: 13   |   Tổng số box: 992
+  [OK]        Đúng 13 track ID.
+
+  Track | Frame có mặt | Số frame | Đoạn vắng (outside)
+      1 |   0–149      |      150 | -
+      2 |   0–149      |      135 | 120–123, 137–147
+      3 |   0–149      |      146 | 41–44
+      4 |   0–105      |      106 | -
+      5 |   0–147      |      124 | 111–134
+      6 |   0–149      |      150 | -
+      7 |   8–29       |       22 | -
+      8 |  44–61       |       18 | -
+      9 |  59–149      |       91 | -
+     10 |  67–87       |       21 | -
+     11 | 134–149      |       16 | -
+     12 | 143–149      |        7 | -
+     13 | 144–149      |        6 | -
+
+
+=== File CVAT for video 1.1: LeHoangDuc_cvat_video.zip ===
+
+  Track | Nhãn   | Frame thấy | Keyframe | KF/100 frame | Frame occluded | Lần bật outside
+      0 | person |        150 |       18 |         12.0 |              0 |               0
+              Track 0: keyframe ở frame [0, 10, 14, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 146, 149]
+      1 | person |        135 |       15 |         11.1 |             25 |               2
+              Track 1: keyframe ở frame [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 124, 130, 148]
+      2 | person |        146 |       17 |         11.6 |             25 |               1
+              Track 2: keyframe ở frame [0, 10, 20, 26, 30, 45, 55, 60, 70, 80, 90, 100, 110, 120, 130, 140, 149]
+      3 | person |        106 |        8 |          7.5 |             16 |               1
+              Track 3: keyframe ở frame [0, 10, 20, 30, 40, 90, 103, 104]
+      4 | person |        124 |       14 |         11.3 |             16 |               2
+              Track 4: keyframe ở frame [0, 10, 20, 30, 40, 50, 105, 135, 136, 137, 138, 139, 140, 142]
+      5 | person |        150 |       26 |         17.3 |              0 |               0
+              Track 5: keyframe ở frame [0, 10, 11, 13, 14, 20, 23, 26, 29, 30, 31, 33, 40, 43, 50, 60, 70, 74,80, 90, 100, 110, 120, 130, 140, 149]
+      6 | person |         18 |        8 |         44.4 |              4 |               1
+              Track 6: keyframe ở frame [44, 54, 56, 57, 58, 59, 60, 61]
+      7 | person |         91 |       22 |         24.2 |              9 |               0
+              Track 7: keyframe ở frame [59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 79, 89, 99, 109, 119, 129, 139, 149]
+      8 | person |         16 |        4 |         25.0 |              0 |               0
+              Track 8: keyframe ở frame [134, 143, 144, 149]
+      9 | person |          7 |        4 |         57.1 |              7 |               0
+              Track 9: keyframe ở frame [143, 144, 145, 146]
+  [CẢNH BÁO]  Track 9: 57 keyframe / 100 frame > 50. Quá dày, dồn keyframe vào chỗ rẽ / dừng / bị che.
+     10 | person |         22 |        9 |         40.9 |             22 |               1
+              Track 10: keyframe ở frame [8, 10, 11, 14, 16, 22, 24, 26, 29]
+     11 | person |          6 |        5 |         83.3 |              6 |               0
+              Track 11: keyframe ở frame [144, 145, 146, 147, 149]
+  [CẢNH BÁO]  Track 11: 83 keyframe / 100 frame > 50. Quá dày, dồn keyframe vào chỗ rẽ / dừng / bị che.
+     12 | person |         21 |        8 |         38.1 |             21 |               1
+              Track 12: keyframe ở frame [67, 73, 74, 75, 76, 77, 79, 83]
+
+  Tổng: 158 keyframe / 992 frame có mặt = 15.9 keyframe / 100 frame
+  [OK]        Đọc được 13 track từ annotations.xml.
+
+=== Tóm tắt ===
+  Lỗi: 0   |   Cảnh báo: 2
+  Không có lỗi định dạng. Mở CVAT xem lại từng [CẢNH BÁO]; cảnh báo đúng ý bạn thì ghi lý do vào báo cáo.
 ```
 
 ## 6. Ba câu kết
